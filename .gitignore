@@ -1,3 +1,4 @@
 /target
-scalers
-strings
+scalers*
+strings*
+compound*
