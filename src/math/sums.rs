@@ -3,6 +3,10 @@ use std::collections::HashSet;
 pub fn find_two_number_sum_with_hash_map (target: i32, integer_vector: &Vec<i32>) -> Option<(i32, i32)> {
     let mut was_traversed = HashSet::new();
 
+    if integer_vector[0] + integer_vector[1] == target {
+        return Some((integer_vector[0], integer_vector[1]))
+    }
+
     for x in integer_vector {
         let y = target - x;
 
