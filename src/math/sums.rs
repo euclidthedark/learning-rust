@@ -20,16 +20,17 @@ pub fn find_two_number_sum_with_hash_map (target: i32, integer_vector: &Vec<i32>
     None
 }
 
-fn find_two_number_sum_with_pointers(target: i32, integer_vector: &mut Vec<i32>) -> Option<(i32, i32)> {
+fn find_two_number_sum_with_pointers(target: i32, integer_vector: &Vec<i32>) -> Option<(i32, i32)> {
+    let mut sorted_integers = integer_vector.clone();
     let mut left_pointer = 0;
     let mut right_pointer = integer_vector.len() - 1;
-    integer_vector.sort();
+    sorted_integers.sort();
 
     while left_pointer < right_pointer {
-        let check_sum = integer_vector[left_pointer] + integer_vector[right_pointer]; 
+        let check_sum = sorted_integers[left_pointer] + sorted_integers[right_pointer]; 
 
         if check_sum == target {
-            return Some((integer_vector[left_pointer], integer_vector[right_pointer]))
+            return Some((sorted_integers[left_pointer], sorted_integers[right_pointer]))
         } else if check_sum < target {
             left_pointer += 1;
         } else if check_sum > target {
@@ -68,8 +69,7 @@ mod test {
         ];
 
         for (target, integers) in inputs.iter() {
-            let mut mutable_integers = integers.clone();
-            match find_two_number_sum_with_pointers(*target, &mut mutable_integers) {
+            match find_two_number_sum_with_pointers(*target, integers) {
                 Some((x, y)) => assert_eq!(x + y, *target),
                 _ => assert_eq!(true, false) 
             }
