@@ -47,7 +47,7 @@ mod test {
     use super::*;
     // testing find_two_number_sum_with_hash_map
     #[test]
-    fn when_given_a_target_and_a_vector_of_ints_one() {
+    fn when_given_a_target_and_a_vector_of_ints_using_hash_map() {
         let inputs = [
             (9, vec![-3, -6, -44, 3, 9, 44, 6, 4]),
             (5, vec![3, 2, 6, -16, 0, 100])
@@ -62,7 +62,7 @@ mod test {
     }
     // testing two number sum using pointers
     #[test]
-    fn when_given_a_target_and_a_vector_of_ints_two () {
+    fn when_given_a_target_and_a_vector_of_ints_using_pointers () {
         let inputs = [
             (9, vec![-3, -6, -44, 3, 9, 44, 6, 4]),
             (5, vec![3, 2, 6, -16, 0, 100])
