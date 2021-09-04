@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-pub fn find_two_number_sum_with_hash_map (target: i32, integer_vector: &Vec<i32>) -> Option<(i32, i32)> {
+fn find_two_number_sum_with_hash_map(target: i32, integer_vector: &Vec<i32>) -> Option<(i32, i32)> {
     let mut was_traversed = HashSet::new();
 
     if integer_vector[0] + integer_vector[1] == target {
@@ -42,7 +42,6 @@ fn find_two_number_sum_with_pointers(target: i32, integer_vector: &Vec<i32>) -> 
 }
 
 #[cfg(test)]
-
 mod test {
     use super::*;
     // testing find_two_number_sum_with_hash_map
